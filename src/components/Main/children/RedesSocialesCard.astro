@@ -1,0 +1,78 @@
+<script>
+	const $socialMediaButton = document.querySelectorAll(
+		".social-media-button"
+	);
+
+	$socialMediaButton.forEach((el, index) => {
+		el.addEventListener("click", () => {
+			switch (index) {
+				case 0:
+					window.location.href =
+						"https://www.tiktok.com/@biopharma_tj";
+					break;
+				case 1:
+					window.location.href =
+						"https://www.instagram.com/bio.pharmatarija/";
+					break;
+				case 2:
+					window.location.href =
+						"https://www.facebook.com/biopharmatarija";
+					break;
+
+				default:
+					break;
+			}
+		});
+	});
+</script>
+
+<div
+	class=`${Astro.props.customClass}  relative flex w-[380px] h-[150px] mx-auto rounded-xl p-4 box-shadow-light box-shadow transform transition-transform duration-300 hover:scale-95 cursor-pointer social-media-button`>
+	<div class="w-[190px] z-10">
+		<h2
+			class=`${Astro.props.customTitleClass} text-white text-md uppercase font-bold`>
+			{Astro.props.title}
+		</h2>
+		<p class=`${Astro.props.customTextClass} text-white text-sm`>
+			{Astro.props.text}
+		</p>
+	</div>
+	<img
+		class=`${Astro.props.customImgClass} absolute img-shadow-light img-shadow`
+		src={`${Astro.props.src}`}
+		alt="Object image"
+	/>
+</div>
+
+<style>
+	/* Background Gradients */
+	.tiktok-gradient {
+		background: linear-gradient(
+			186deg,
+			#00f7ef 0%,
+			#000 30.47%,
+			#000 67.57%,
+			#ff004f 100%
+		);
+	}
+	.instagram-gradient {
+		background: linear-gradient(
+			183deg,
+			#711cbe 0%,
+			#c42b66 45.83%,
+			#c42b66 68.75%,
+			#e19449 100%
+		);
+	}
+	.facebook-gradient {
+		background: linear-gradient(183deg, #00affe 0%, #006bf0 100%);
+	}
+
+	/* Shadows */
+	.box-shadow {
+		box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.6);
+	}
+	.img-shadow {
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.6));
+	}
+</style>
